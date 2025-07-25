@@ -53,10 +53,10 @@ nav {
 .testimonios footer { color: var(--dorado);}
 .testimonios-videos-galeria {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1.2em;
   margin: 2em auto 0 auto;
-  max-width: 1200px;
+  max-width: 1800px;
   justify-items: center;
 }
 .testimonios-video {
@@ -74,8 +74,8 @@ nav {
 .testimonios-video iframe {
   border-radius: 8px;
   width: 100%;
-  min-width: 180px;
-  max-width: 260px;
+  min-width: 140px;
+  max-width: 180px;
   aspect-ratio: 16 / 9;
   height: auto;
   margin-bottom: 0.5em;
@@ -98,10 +98,10 @@ nav {
 .videos { background: var(--gris); padding: 2em 0;}
 .videos-galeria {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1.2em;
   margin: 2em auto 0 auto;
-  max-width: 1200px;
+  max-width: 1800px;
   justify-items: center;
 }
 .video {
@@ -119,8 +119,8 @@ nav {
 .video iframe {
   border-radius: 8px;
   width: 100%;
-  min-width: 180px;
-  max-width: 260px;
+  min-width: 140px;
+  max-width: 180px;
   aspect-ratio: 16 / 9;
   height: auto;
   margin-bottom: 0.5em;
@@ -136,26 +136,26 @@ nav {
 .catalogo { padding: 2em 0; background: var(--negro);}
 .productos {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1.2em;
   justify-items: center;
   margin: 2em auto 0 auto;
-  max-width: 1300px;
+  max-width: 1800px;
 }
-.producto { background: var(--gris); border-radius: 10px; padding: 1em; width: 180px; text-align: center;}
+.producto { background: var(--gris); border-radius: 10px; padding: 1em; width: 130px; text-align: center;}
 .producto img { max-width: 100%; border-radius: 6px;}
 .catalogo-info { text-align: center; margin-top: 1em; color: var(--dorado);}
 
 .servicios-miembros { padding: 2em 0; background: var(--gris);}
 .servicios-lista {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1.2em;
   justify-items: center;
   margin: 2em auto 0 auto;
-  max-width: 1300px;
+  max-width: 1800px;
 }
-.servicio { background: var(--negro); border-radius: 10px; padding: 1em; width: 180px; text-align: center;}
+.servicio { background: var(--negro); border-radius: 10px; padding: 1em; width: 130px; text-align: center;}
 .servicio img { max-width: 80px; border-radius: 40px;}
 .postulacion-servicio { text-align: center; margin-top: 1em;}
 
@@ -168,10 +168,10 @@ nav {
 .logro img { max-width: 60px; border-radius: 30px;}
 .comunidad-videos-galeria {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1.2em;
   margin: 2em auto 0 auto;
-  max-width: 1200px;
+  max-width: 1800px;
   justify-items: center;
 }
 .comunidad-video {
@@ -189,8 +189,8 @@ nav {
 .comunidad-video iframe {
   border-radius: 8px;
   width: 100%;
-  min-width: 180px;
-  max-width: 260px;
+  min-width: 140px;
+  max-width: 180px;
   aspect-ratio: 16 / 9;
   height: auto;
   margin-bottom: 0.5em;
@@ -228,32 +228,24 @@ footer { background: var(--negro); color: var(--dorado); text-align: center; pad
 .botones-flotantes a.whatsapp { background: #25d366; color: #fff;}
 .botones-flotantes a.telefono { background: var(--rojo); color: #fff;}
 .botones-flotantes a.email { background: var(--negro); color: var(--dorado);}
-@media (max-width: 1300px) {
-  .productos, .servicios-lista {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1800px) {
+  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (max-width: 1100px) {
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 900px) {
-  .productos, .servicios-lista {
+  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 700px) {
   .nosotros, .logros { flex-direction: column; align-items: center;}
   nav, .footer-content { flex-direction: column; gap: 0.5em;}
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria {
+  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista {
     grid-template-columns: 1fr;
     gap: 1em;
   }
-  .video, .testimonios-video, .comunidad-video {
+  .video, .testimonios-video, .comunidad-video, .producto, .servicio {
     max-width: 98vw;
-  }
-  .productos, .servicios-lista {
-    grid-template-columns: 1fr;
   }
 }
