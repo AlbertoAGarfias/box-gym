@@ -1,369 +1,513 @@
-:root {
-  --negro: #181818;
-  --dorado: #e6b800;
-  --rojo: #c1272d;
-  --blanco: #fff;
-  --gris: #222;
-  --fuente: 'Montserrat', Arial, sans-serif;
-  --sombra-boton: 0 2px 8px #000a;
-}
-* { box-sizing: border-box; }
-body {
-  font-family: var(--fuente);
-  margin: 0;
-  background: var(--negro);
-  color: var(--blanco);
-}
-header {
-  background: var(--negro);
-  border-bottom: 2px solid var(--dorado);
-  padding: 0.2em 0;
-  position: sticky; top: 0; z-index: 1000;
-}
-nav {
-  display: flex; align-items: center; justify-content: space-between;
-  max-width: 1200px; margin: auto; padding: 0 1em;
-}
-.logo { display: flex; align-items: center; gap: 0.5em; font-size: 1.4em; font-weight: bold; color: var(--dorado);}
-.logo img { height: 40px; }
-.menu {
-  display: flex; gap: 0.5em; list-style: none; margin: 0; padding: 0;
-}
-.menu li {
-  display: flex;
-}
-.menu li a {
-  color: var(--blanco);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.4em 1em;
-  border-radius: 25px;
-  transition: background .2s, color .2s, box-shadow .2s;
-  font-size: 1em;
-  letter-spacing: 0.02em;
-  position: relative;
-  border: 2px solid transparent;
-}
-.menu li a.active, .menu li a:hover, .menu li a:focus {
-  color: var(--negro);
-  background: var(--dorado);
-  box-shadow: var(--sombra-boton);
-  border-color: var(--rojo);
-  outline: none;
-}
-.cta { margin-left: 1em; }
-.btn-primario, .btn-secundario {
-  padding: 0.5em 1.2em;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.2em;
-  transition: background .2s, color .2s, box-shadow .2s, transform .2s;
-  box-shadow: var(--sombra-boton);
-  letter-spacing: 0.04em;
-  font-size: 1.05em;
-  border: none;
-  cursor: pointer;
-}
-.btn-primario { background: var(--dorado); color: var(--negro); }
-.btn-primario:hover, .btn-primario:focus { background: var(--rojo); color: var(--blanco); transform: scale(1.08);}
-.btn-secundario { background: var(--rojo); color: var(--blanco);}
-.btn-secundario:hover, .btn-secundario:focus { background: var(--dorado); color: var(--negro); transform: scale(1.08);}
-.hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 2em 0 1em 0; background: var(--gris);}
-.hero-content { max-width: 600px; margin: auto; }
-.hero-content h1 { font-size: 2.2em; color: var(--dorado); margin: 0.2em 0 0.3em 0;}
-.hero-content p { font-size: 1.1em; margin: 0 0 1em 0;}
-.hero-bg img { max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px #0009;}
-@media (max-width:900px) { .hero { flex-direction: column; text-align: center; } .hero-bg img { margin-top: 2em;} }
-.testimonios { background: var(--negro); padding: 2em 0; text-align: center;}
-.testimonios blockquote { background: var(--gris); margin: 1em auto; padding: 1em; border-radius: 10px; max-width: 500px;}
-.testimonios footer { color: var(--dorado);}
-.testimonios-videos-galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2em;
-  margin: 2em auto 0 auto;
-  max-width: 900px;
-  justify-items: center;
-}
-.testimonios-video {
-  background: var(--gris);
-  border-radius: 10px;
-  padding: 0.7em;
-  box-shadow: 0 4px 16px #0005;
-  transition: transform .2s, box-shadow .2s;
-  text-align: center;
-}
-.testimonios-video:hover {
-  transform: scale(1.05) translateY(-4px);
-  box-shadow: 0 8px 32px #0008;
-}
-.testimonios-video iframe {
-  border-radius: 8px;
-  width: 100%;
-  min-width: 140px;
-  max-width: 180px;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin-bottom: 0.5em;
-}
-.testimonios-video p {
-  color: var(--dorado);
-  font-weight: 600;
-  margin: 0.3em 0 0 0;
-  font-size: 1em;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3NBOX | Gimnasio de Boxeo en Toluca</title>
+  <meta name="description" content="Forja tu espíritu y cuerpo en 3NBOX. Gimnasio de boxeo líder en Toluca, clases, sparring, tienda y comunidad.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navegación -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo-3nbox.svg" alt="3NBOX Logo">
+        <span>3NBOX</span>
+      </div>
+      <ul class="menu">
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#sparring">Sparring</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="cta">
+        <a href="#contacto" class="btn-primario">Agenda tu clase</a>
+      </div>
+    </nav>
+  </header>
 
-.mosaico-galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2em;
-  max-width: 900px;
-  margin: 2em auto;
-}
-.mosaico-img-wrap {
-  position: relative;
-  cursor: pointer;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px #0005;
-  transition: transform .2s;
-}
-.mosaico-img-wrap:hover {
-  transform: scale(1.04);
-  z-index: 2;
-}
-.mosaico-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-}
-.mosaico-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, #181818ee 70%, transparent);
-  color: var(--dorado);
-  font-weight: bold;
-  padding: 0.5em 0.8em;
-  font-size: 1em;
-  border-radius: 0 0 10px 10px;
-}
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>En 3NBOX forjamos campeones dentro y fuera del ring</h1>
+      <p>Cree en ti, supera tus límites y demuestra que el verdadero rival eres tú mismo. ¡Disciplina, coraje y perseverancia: tu victoria comienza aquí!</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primario">Agenda tu clase prueba</a>
+        <a href="#videos" class="btn-secundario">Ver peleas</a>
+      </div>
+    </div>
+    <div class="hero-bg">
+      <img src="hero-boxeo.png" alt="Boxeador entrenando">
+    </div>
+  </section>
 
-.mosaico-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(24,24,24,0.95);
-  align-items: center;
-  justify-content: center;
-}
-.mosaico-modal.active { display: flex; }
-.mosaico-modal-content {
-  position: relative;
-  background: var(--gris);
-  border-radius: 18px;
-  max-width: 90vw;
-  max-height: 80vh;
-  box-shadow: 0 8px 32px #000c;
-  padding: 1em 1em 2em 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.mosaico-modal-img {
-  width: 90vw;
-  max-width: 650px;
-  max-height: 70vh;
-  border-radius: 12px;
-  box-shadow: 0 6px 24px #000b;
-  object-fit: contain;
-}
-.mosaico-modal-caption {
-  margin-top: 1em;
-  color: var(--dorado);
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
-}
-.mosaico-modal-close {
-  position: absolute; top: 0.6em; right: 1em;
-  background: var(--rojo);
-  color: var(--blanco);
-  border-radius: 30px;
-  font-size: 1.7em;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--sombra-boton);
-  transition: background .2s;
-}
-.mosaico-modal-close:hover, .mosaico-modal-close:focus { background: var(--dorado); color: var(--negro); }
+  <!-- Testimonios -->
+  <section id="testimonios" class="testimonios">
+    <h2>Historias de Éxito</h2>
+    <div class="testimonios-slider">
+      <blockquote>
+        <p>“En 3NBOX encontré mucho más que un gimnasio, encontré una familia y aprendí a confiar en mí.”</p>
+        <footer>—  Alberto. A.</footer>
+      </blockquote>
+      <!-- Puedes agregar más testimonios aquí -->
+    </div>
+    <div class="testimonios-videos-galeria">
+      <div class="testimonios-video">
+        <iframe src="https://www.youtube.com/embed/JEw35B1JANY" title="Testimonio 1" frameborder="0" allowfullscreen></iframe>
+        <p>Testimonio 1</p>
+      </div>
+      <div class="testimonios-video">
+        <iframe src="https://www.youtube.com/embed/68E2X9ChI3I" title="Testimonio 2" frameborder="0" allowfullscreen></iframe>
+        <p>Testimonio 2</p>
+      </div>
+      <div class="testimonios-video">
+        <iframe src="https://www.youtube.com/embed/dummy1" title="Testimonio 3" frameborder="0" allowfullscreen></iframe>
+        <p>Testimonio 3</p>
+      </div>
+      <div class="testimonios-video">
+        <iframe src="https://www.youtube.com/embed/dummy2" title="Testimonio 4" frameborder="0" allowfullscreen></iframe>
+        <p>Testimonio 4</p>
+      </div>
+      <div class="testimonios-video">
+        <iframe src="https://www.youtube.com/embed/dummy3" title="Testimonio 5" frameborder="0" allowfullscreen></iframe>
+        <p>Testimonio 5</p>
+      </div>
+      <div class="testimonios-video">
+        <iframe src="https://www.youtube.com/embed/dummy4" title="Testimonio 6" frameborder="0" allowfullscreen></iframe>
+        <p>Testimonio 6</p>
+      </div>
+    </div>
+    <!-- Mosaico de imágenes Historias de Éxito -->
+    <div class="mosaico-galeria" id="mosaico1">
+      <div class="mosaico-img-wrap" data-img="historia1.jpg" data-caption="Primer entrenamiento">
+        <img src="historia1.jpg" alt="Primer entrenamiento" class="mosaico-img">
+        <span class="mosaico-caption">Primer entrenamiento</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="historia2.jpg" data-caption="Victoria regional">
+        <img src="historia2.jpg" alt="Victoria regional" class="mosaico-img">
+        <span class="mosaico-caption">Victoria regional</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="historia3.jpg" data-caption="Equipo 3NBOX">
+        <img src="historia3.jpg" alt="Equipo 3NBOX" class="mosaico-img">
+        <span class="mosaico-caption">Equipo 3NBOX</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="historia4.jpg" data-caption="Campeón estatal">
+        <img src="historia4.jpg" alt="Campeón estatal" class="mosaico-img">
+        <span class="mosaico-caption">Campeón estatal</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="historia5.jpg" data-caption="Padres apoyando">
+        <img src="historia5.jpg" alt="Padres apoyando" class="mosaico-img">
+        <span class="mosaico-caption">Padres apoyando</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="historia6.jpg" data-caption="Celebración">
+        <img src="historia6.jpg" alt="Celebración" class="mosaico-img">
+        <span class="mosaico-caption">Celebración</span>
+      </div>
+      <!-- Puedes agregar hasta 8 imágenes -->
+    </div>
+  </section>
 
-.nosotros { display: flex; flex-wrap: wrap; gap: 2em; padding: 2em 0; max-width: 1200px; margin: auto;}
-.info-nosotros { flex: 2; min-width: 300px;}
-.historia-gimnasio { flex: 1; text-align: center;}
-.historia-gimnasio img { max-width: 220px; border-radius: 10px;}
-.valores { display: flex; gap:1em; list-style: none; padding: 0; margin: 1em 0;}
-.valores li { background: var(--rojo); color: var(--blanco); padding: 0.3em 1em; border-radius: 15px; font-weight: bold;}
-.mision-vision h3 { color: var(--dorado);}
+  <!-- Nosotros -->
+  <section id="nosotros" class="nosotros">
+    <div class="info-nosotros">
+      <h2>¿Quiénes Somos?</h2>
+      <p><strong>3NBOX</strong> forma deportistas íntegros y disciplinados, promoviendo valores como respeto, perseverancia y trabajo en equipo a través del boxeo.</p>
+      <ul class="valores">
+        <li>Disciplina</li>
+        <li>Respeto</li>
+        <li>Compañerismo</li>
+        <li>Honestidad</li>
+        <li>Resiliencia</li>
+      </ul>
+      <div class="mision-vision">
+        <h3>Misión</h3>
+        <p>Formar deportistas íntegros y disciplinados, promoviendo valores como respeto, perseverancia y trabajo en equipo a través del boxeo.</p>
+        <h3>Visión</h3>
+        <p>Ser el gimnasio de boxeo líder y referente en Toluca, reconocido por la calidad humana y deportiva de sus integrantes y por el impacto positivo en la comunidad, usando el boxeo como herramienta de transformación social.</p>
+      </div>
+    </div>
+    <div class="historia-gimnasio">
+      <img src="gimnasio.png" alt="Gimnasio">
+      <p>Desde nuestros inicios en Santa Ana Tlapaltitlán, impulsamos el boxeo como disciplina para todos.</p>
+    </div>
+  </section>
 
-.videos { background: var(--gris); padding: 2em 0;}
-.videos-galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2em;
-  margin: 2em auto 0 auto;
-  max-width: 900px;
-  justify-items: center;
-}
-.video {
-  background: var(--negro);
-  border-radius: 10px;
-  padding: 0.7em;
-  box-shadow: 0 4px 16px #0005;
-  transition: transform .2s, box-shadow .2s;
-  text-align: center;
-}
-.video:hover {
-  transform: scale(1.05) translateY(-4px);
-  box-shadow: 0 8px 32px #0008;
-}
-.video iframe {
-  border-radius: 8px;
-  width: 100%;
-  min-width: 140px;
-  max-width: 180px;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin-bottom: 0.5em;
-}
-.video p {
-  color: var(--dorado);
-  font-weight: 600;
-  margin: 0.3em 0 0 0;
-  font-size: 1em;
-}
-.ver-mas a { color: var(--dorado); margin: 0 1em;}
+  <!-- Videos -->
+  <section id="videos" class="videos">
+    <h2>Peleas y Entrenamientos</h2>
+    <div class="videos-galeria">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/68E2X9ChI3I" title="Gael Julio - 2024" frameborder="0" allowfullscreen></iframe>
+        <p>Gael Julio - 2024</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/JEw35B1JANY" title="Sep - 2024" frameborder="0" allowfullscreen></iframe>
+        <p>Sep - 2024</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/dummy3" title="Entreno 1" frameborder="0" allowfullscreen></iframe>
+        <p>Entreno 1</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/dummy4" title="Entreno 2" frameborder="0" allowfullscreen></iframe>
+        <p>Entreno 2</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/dummy5" title="Entreno 3" frameborder="0" allowfullscreen></iframe>
+        <p>Entreno 3</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/dummy6" title="Entreno 4" frameborder="0" allowfullscreen></iframe>
+        <p>Entreno 4</p>
+      </div>
+    </div>
+    <div class="ver-mas">
+      <a href="https://www.facebook.com/profile.php?id=100035441184308" target="_blank">Ver más en Facebook</a>
+      <a href="https://www.instagram.com/generico/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCgenerico" target="_blank">YouTube</a>
+    </div>
+    <!-- Mosaico de imágenes Peleas y Entrenamientos -->
+    <div class="mosaico-galeria" id="mosaico2">
+      <div class="mosaico-img-wrap" data-img="pelea1.jpg" data-caption="Pelea 1">
+        <img src="pelea1.jpg" alt="Pelea 1" class="mosaico-img">
+        <span class="mosaico-caption">Pelea 1</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="pelea2.jpg" data-caption="Entrenamiento 2">
+        <img src="pelea2.jpg" alt="Entrenamiento 2" class="mosaico-img">
+        <span class="mosaico-caption">Entrenamiento 2</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="pelea3.jpg" data-caption="Celebración 3">
+        <img src="pelea3.jpg" alt="Celebración 3" class="mosaico-img">
+        <span class="mosaico-caption">Celebración 3</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="pelea4.jpg" data-caption="Sparring">
+        <img src="pelea4.jpg" alt="Sparring" class="mosaico-img">
+        <span class="mosaico-caption">Sparring</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="pelea5.jpg" data-caption="Equipo 3NBOX">
+        <img src="pelea5.jpg" alt="Equipo 3NBOX" class="mosaico-img">
+        <span class="mosaico-caption">Equipo 3NBOX</span>
+      </div>
+      <div class="mosaico-img-wrap" data-img="pelea6.jpg" data-caption="Premiación">
+        <img src="pelea6.jpg" alt="Premiación" class="mosaico-img">
+        <span class="mosaico-caption">Premiación</span>
+      </div>
+    </div>
+  </section>
 
-.catalogo { padding: 2em 0; background: var(--negro);}
-.productos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.2em;
-  justify-items: center;
-  margin: 2em auto 0 auto;
-  max-width: 900px;
-}
-.producto { background: var(--gris); border-radius: 10px; padding: 1em; width: 130px; text-align: center;}
-.producto img { max-width: 100%; border-radius: 6px;}
-.catalogo-info { text-align: center; margin-top: 1em; color: var(--dorado);}
+  <!-- Catálogo -->
+  <section id="catalogo" class="catalogo">
+    <h2>Catálogo de Artículos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="guantes.jpg" alt="Guantes de box">
+        <h3>Guantes de Box</h3>
+        <p>Desde $300 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="vendas.jpg" alt="Vendas">
+        <h3>Vendas 5 cm</h3>
+        <p>$50 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="protector.jpg" alt="Protector Bucal">
+        <h3>Protector Bucal</h3>
+        <p>$80 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="short.jpg" alt="Short de Box">
+        <h3>Short de Box</h3>
+        <p>$180 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="playera.jpg" alt="Playera 3NBOX">
+        <h3>Playera 3NBOX</h3>
+        <p>$150 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="cuerda.jpg" alt="Cuerda para saltar">
+        <h3>Cuerda para Saltar</h3>
+        <p>$70 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="careta.jpg" alt="Careta de Box">
+        <h3>Careta de Box</h3>
+        <p>$400 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+      <div class="producto">
+        <img src="mochila.jpg" alt="Mochila 3NBOX">
+        <h3>Mochila 3NBOX</h3>
+        <p>$250 MXN</p>
+        <a href="https://wa.me/527292683494" class="btn-primario">Solicitar info</a>
+      </div>
+    </div>
+    <p class="catalogo-info">¿No tienes material? ¡Adquiérelo en el gimnasio a precios accesibles!</p>
+  </section>
 
-.servicios-miembros { padding: 2em 0; background: var(--gris);}
-.servicios-lista {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.2em;
-  justify-items: center;
-  margin: 2em auto 0 auto;
-  max-width: 900px;
-}
-.servicio { background: var(--negro); border-radius: 10px; padding: 1em; width: 130px; text-align: center;}
-.servicio img { max-width: 80px; border-radius: 40px;}
-.postulacion-servicio { text-align: center; margin-top: 1em;}
+  <!-- Servicios de miembros -->
+  <section id="servicios" class="servicios-miembros">
+    <h2>Servicios de Nuestros Miembros</h2>
+    <div class="servicios-lista">
+      <div class="servicio">
+        <img src="psicologo.jpg" alt="Psicólogo">
+        <h3>Psicología Deportiva</h3>
+        <p>Atención profesional por la Lic. Fátima R., especialista en deporte.</p>
+        <a href="mailto:fatima@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="nutriologo.jpg" alt="Nutriólogo">
+        <h3>Nutrición</h3>
+        <p>Planes personalizados de alimentación para atletas.</p>
+        <a href="mailto:nutriologo@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="fisioterapia.jpg" alt="Fisioterapeuta">
+        <h3>Fisioterapia</h3>
+        <p>Sesiones de recuperación y prevención de lesiones.</p>
+        <a href="mailto:fisio@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="referee.jpg" alt="Referee">
+        <h3>Referee y Jueces</h3>
+        <p>Servicios de arbitraje profesional para eventos.</p>
+        <a href="mailto:referee@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="fotografo.jpg" alt="Fotógrafo">
+        <h3>Fotografía Deportiva</h3>
+        <p>Sesiones y cobertura fotográfica de peleas y entrenos.</p>
+        <a href="mailto:foto@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="coach.jpg" alt="Coach">
+        <h3>Coach de Box</h3>
+        <p>Entrenamiento personalizado y grupal.</p>
+        <a href="mailto:coach@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="masajista.jpg" alt="Masajista">
+        <h3>Masajista Deportivo</h3>
+        <p>Masajes de recuperación y tonificación muscular.</p>
+        <a href="mailto:masajista@example.com">Contactar</a>
+      </div>
+      <div class="servicio">
+        <img src="asistente.jpg" alt="Asistente">
+        <h3>Asistente de Esquina</h3>
+        <p>Asistencia en peleas y eventos de boxeo.</p>
+        <a href="mailto:asistente@example.com">Contactar</a>
+      </div>
+    </div>
+    <div class="postulacion-servicio">
+      <a href="#contacto" class="btn-secundario">¿Quieres publicar tu servicio? Contáctanos</a>
+    </div>
+  </section>
 
-.sparring { background: var(--negro); padding: 2em 0;}
-.info-sparring ul { list-style: disc; color: var(--dorado); margin-left: 2em;}
-.calendario { margin-top: 1em; text-align: center;}
-.comunidad { padding: 2em 0; background: var(--gris);}
-.logros { display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;}
-.logro { background: var(--negro); border-radius: 10px; padding: 1em; width: 150px; text-align: center;}
-.logro img { max-width: 60px; border-radius: 30px;}
-.comunidad-videos-galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2em;
-  margin: 2em auto 0 auto;
-  max-width: 900px;
-  justify-items: center;
-}
-.comunidad-video {
-  background: var(--gris);
-  border-radius: 10px;
-  padding: 0.7em;
-  box-shadow: 0 4px 16px #0005;
-  transition: transform .2s, box-shadow .2s;
-  text-align: center;
-}
-.comunidad-video:hover {
-  transform: scale(1.05) translateY(-4px);
-  box-shadow: 0 8px 32px #0008;
-}
-.comunidad-video iframe {
-  border-radius: 8px;
-  width: 100%;
-  min-width: 140px;
-  max-width: 180px;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin-bottom: 0.5em;
-}
-.comunidad-video p {
-  color: var(--dorado);
-  font-weight: 600;
-  margin: 0.3em 0 0 0;
-  font-size: 1em;
-}
+  <!-- Sparring -->
+  <section id="sparring" class="sparring">
+    <h2>Sparring y Horarios Especiales</h2>
+    <div class="info-sparring">
+      <ul>
+        <li><strong>Horarios Matutino:</strong> 7 am, 8 am</li>
+        <li><strong>Horarios Vespertino:</strong> 5 pm, 6 pm, 7 pm</li>
+        <li>Requisitos: Vendas, guantes y respeto por las reglas de seguridad.</li>
+      </ul>
+      <p>¡Vive la experiencia de pelear en un ambiente seguro y profesional!</p>
+    </div>
+    <div class="calendario">
+      <p>Próximos eventos y sparrings próximamente.</p>
+    </div>
+  </section>
 
-.blog { padding: 2em 0; background: var(--negro);}
-.entrada-blog { background: var(--gris); padding: 1em; border-radius: 10px; margin: 0.5em auto; max-width: 600px;}
-.entrada-blog h3 { margin: 0.5em 0;}
-.contacto { background: var(--gris); padding: 2em 0;}
-.info-contacto ul { list-style: none; padding: 0;}
-.info-contacto li { margin-bottom: 0.7em;}
-.mapa { margin: 1em 0;}
-.form-contacto { max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 0.5em;}
-.form-contacto input, .form-contacto textarea { border-radius: 5px; border: none; padding: 0.5em;}
-.form-contacto button { margin-top: 1em;}
-.enlace-amarillo {
-  color: var(--dorado) !important;
-  text-decoration: underline;
-}
-.enlace-amarillo:hover, .enlace-amarillo:focus {
-  color: var(--rojo) !important;
-}
-footer { background: var(--negro); color: var(--dorado); text-align: center; padding: 1em 0;}
-.footer-content { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; max-width: 1200px; margin: auto; }
-.redes a { color: var(--blanco); margin: 0 0.5em;}
-.aviso { color: var(--blanco); text-decoration: underline;}
-.botones-flotantes { position: fixed; bottom: 1em; right: 1em; display: flex; flex-direction: column; gap: 0.7em; z-index:999;}
-.botones-flotantes a { background: var(--dorado); color: var(--negro); padding: 0.8em 1em; border-radius: 25px; font-weight: bold; text-decoration: none; box-shadow: var(--sombra-boton);}
-.botones-flotantes a.whatsapp { background: #25d366; color: #fff;}
-.botones-flotantes a.telefono { background: var(--rojo); color: #fff;}
-.botones-flotantes a.email { background: var(--negro); color: var(--dorado);}
-@media (max-width: 900px) {
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista, .mosaico-galeria {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 96vw;
-  }
-}
-@media (max-width: 700px) {
-  .nosotros, .logros { flex-direction: column; align-items: center;}
-  nav, .footer-content { flex-direction: column; gap: 0.5em;}
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista, .mosaico-galeria {
-    grid-template-columns: 1fr;
-    gap: 1em;
-    max-width: 99vw;
-  }
-  .video, .testimonios-video, .comunidad-video, .producto, .servicio, .mosaico-img-wrap {
-    max-width: 98vw;
-  }
-}
+  <!-- Comunidad -->
+  <section id="comunidad" class="comunidad">
+    <h2>Muro de Logros</h2>
+    <div class="logros">
+      <div class="logro">
+        <img src="alumno1.jpg" alt="Alumno 1">
+        <p>Primer pelea ganada</p>
+        <span>María S.</span>
+      </div>
+      <div class="logro">
+        <img src="alumno2.jpg" alt="Alumno 2">
+        <p>Campeón Estatal 2024</p>
+        <span>Carlos L.</span>
+      </div>
+      <div class="logro">
+        <img src="alumno3.jpg" alt="Alumno 3">
+        <p>Mejor progreso</p>
+        <span>Juan P.</span>
+      </div>
+      <div class="logro">
+        <img src="alumno4.jpg" alt="Alumno 4">
+        <p>Debut exitoso</p>
+        <span>Ana G.</span>
+      </div>
+      <div class="logro">
+        <img src="alumno5.jpg" alt="Alumno 5">
+        <p>Espíritu deportivo</p>
+        <span>Pedro M.</span>
+      </div>
+      <div class="logro">
+        <img src="alumno6.jpg" alt="Alumno 6">
+        <p>Perseverancia</p>
+        <span>Lucía T.</span>
+      </div>
+    </div>
+    <div class="comunidad-videos-galeria">
+      <div class="comunidad-video">
+        <iframe src="https://www.youtube.com/embed/JEw35B1JANY" title="Logro Video 1" frameborder="0" allowfullscreen></iframe>
+        <p>Logro Video 1</p>
+      </div>
+      <div class="comunidad-video">
+        <iframe src="https://www.youtube.com/embed/68E2X9ChI3I" title="Logro Video 2" frameborder="0" allowfullscreen></iframe>
+        <p>Logro Video 2</p>
+      </div>
+      <div class="comunidad-video">
+        <iframe src="https://www.youtube.com/embed/dummy5" title="Logro Video 3" frameborder="0" allowfullscreen></iframe>
+        <p>Logro Video 3</p>
+      </div>
+      <div class="comunidad-video">
+        <iframe src="https://www.youtube.com/embed/dummy6" title="Logro Video 4" frameborder="0" allowfullscreen></iframe>
+        <p>Logro Video 4</p>
+      </div>
+      <div class="comunidad-video">
+        <iframe src="https://www.youtube.com/embed/dummy7" title="Logro Video 5" frameborder="0" allowfullscreen></iframe>
+        <p>Logro Video 5</p>
+      </div>
+      <div class="comunidad-video">
+        <iframe src="https://www.youtube.com/embed/dummy8" title="Logro Video 6" frameborder="0" allowfullscreen></iframe>
+        <p>Logro Video 6</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="blog">
+    <h2>Blog 3NBOX</h2>
+    <article class="entrada-blog">
+      <h3>¿Por qué el boxeo es el mejor deporte para tu mente y cuerpo?</h3>
+      <p>El boxeo no solo mejora tu condición física, también fortalece tu disciplina mental y confianza...</p>
+      <a href="#">Leer más</a>
+    </article>
+    <!-- Más artículos -->
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto & Ubicación</h2>
+    <div class="info-contacto">
+      <ul>
+        <li><strong>Dirección:</strong> Calle 16 de septiembre esquina Morelos, Santa Ana Tlapaltitlán, Toluca, Estado de México</li>
+        <li><strong>Teléfono:</strong> <a href="tel:7292683494" class="enlace-amarillo">729 268 3494</a></li>
+        <li><strong>Correo:</strong> <a href="mailto:3n.3n.box@gmail.com" class="enlace-amarillo">3n.3n.box@gmail.com</a></li>
+        <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100035441184308" target="_blank" class="enlace-amarillo">3NBOX</a></li>
+        <li>
+          <strong>Horarios:</strong>
+          <ul>
+            <li><b>Matutino:</b> 7 am, 8 am</li>
+            <li><b>Vespertino:</b> 5 pm, 6 pm, 7 pm</li>
+          </ul>
+        </li>
+        <li>
+          <strong style="font-size: 3em; color: #e6b800; display:inline-block; line-height:1;">Clase: $25</strong>
+          <span style="font-size:1.5em; color:#fff; display:inline-block; margin-left:0.5em;">| Mensualidad: $450</span>
+        </li>
+      </ul>
+      <div class="mapa">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3766.0841832835295!2d-99.6197439247895!3d19.27870498196807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDE2JzQzLjMiTiA5OcKwMzcnMDEuOCJX!5e0!3m2!1ses-419!2smx!4v1753385230956!5m2!1ses-419!2smx" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+      </div>
+    </div>
+    <form class="form-contacto" action="#" method="POST">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      <label><input type="checkbox" name="acepta" required> Acepto ser contactado</label>
+      <button type="submit" class="btn-primario">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 3NBOX - Gimnasio de Boxeo en Toluca</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/profile.php?id=100035441184308" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/generico/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCgenerico" target="_blank">YouTube</a>
+      </div>
+      <a href="#aviso-privacidad" class="aviso">Aviso de Privacidad</a>
+    </div>
+  </footer>
+
+  <!-- Botones flotantes -->
+  <div class="botones-flotantes">
+    <a href="https://wa.me/527292683494" class="whatsapp" title="WhatsApp" target="_blank">WhatsApp</a>
+    <a href="tel:7292683494" class="telefono" title="Llamar">Llamar</a>
+    <a href="mailto:3n.3n.box@gmail.com" class="email" title="Correo">Email</a>
+    <a href="https://www.instagram.com/generico/" class="email" title="Instagram" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/channel/UCgenerico" class="email" title="YouTube" target="_blank">YouTube</a>
+  </div>
+
+  <!-- Modal para mosaico -->
+  <div class="mosaico-modal" id="mosaico-modal">
+    <div class="mosaico-modal-content">
+      <button class="mosaico-modal-close" id="mosaico-modal-close" aria-label="Cerrar">&times;</button>
+      <img src="" alt="" class="mosaico-modal-img" id="mosaico-modal-img">
+      <div class="mosaico-modal-caption" id="mosaico-modal-caption"></div>
+    </div>
+  </div>
+
+  <script>
+  // Modal para mosaico de imágenes
+  const modal = document.getElementById('mosaico-modal');
+  const modalImg = document.getElementById('mosaico-modal-img');
+  const modalCaption = document.getElementById('mosaico-modal-caption');
+  const modalClose = document.getElementById('mosaico-modal-close');
+  document.querySelectorAll('.mosaico-img-wrap').forEach(item => {
+    item.addEventListener('click', function() {
+      modalImg.src = this.dataset.img;
+      modalImg.alt = this.querySelector('.mosaico-img').alt;
+      modalCaption.textContent = this.dataset.caption || '';
+      modal.classList.add('active');
+      document.body.style.overflow = "hidden";
+    });
+  });
+  modalClose.addEventListener('click', function() {
+    modal.classList.remove('active');
+    modalImg.src = "";
+    document.body.style.overflow = "";
+  });
+  modal.addEventListener('click', function(e) {
+    if(e.target === modal) {
+      modal.classList.remove('active');
+      modalImg.src = "";
+      document.body.style.overflow = "";
+    }
+  });
+  // Botón activo en menú
+  document.querySelectorAll('.menu li a').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.menu li a').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  </script>
+</body>
+</html>
