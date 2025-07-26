@@ -5,6 +5,7 @@
   --blanco: #fff;
   --gris: #222;
   --fuente: 'Montserrat', Arial, sans-serif;
+  --sombra-boton: 0 2px 8px #000a;
 }
 * { box-sizing: border-box; }
 body {
@@ -25,9 +26,31 @@ nav {
 }
 .logo { display: flex; align-items: center; gap: 0.5em; font-size: 1.4em; font-weight: bold; color: var(--dorado);}
 .logo img { height: 40px; }
-.menu { display: flex; gap: 1em; list-style: none; margin: 0; padding: 0;}
-.menu li a { color: var(--blanco); text-decoration: none; font-weight: 500; }
-.menu li a:hover { color: var(--dorado); }
+.menu {
+  display: flex; gap: 0.5em; list-style: none; margin: 0; padding: 0;
+}
+.menu li {
+  display: flex;
+}
+.menu li a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4em 1em;
+  border-radius: 25px;
+  transition: background .2s, color .2s, box-shadow .2s;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  position: relative;
+  border: 2px solid transparent;
+}
+.menu li a.active, .menu li a:hover, .menu li a:focus {
+  color: var(--negro);
+  background: var(--dorado);
+  box-shadow: var(--sombra-boton);
+  border-color: var(--rojo);
+  outline: none;
+}
 .cta { margin-left: 1em; }
 .btn-primario, .btn-secundario {
   padding: 0.5em 1.2em;
@@ -37,11 +60,16 @@ nav {
   display: inline-block;
   margin: 0.2em;
   transition: background .2s, color .2s, box-shadow .2s, transform .2s;
+  box-shadow: var(--sombra-boton);
+  letter-spacing: 0.04em;
+  font-size: 1.05em;
+  border: none;
+  cursor: pointer;
 }
 .btn-primario { background: var(--dorado); color: var(--negro); }
-.btn-primario:hover { background: var(--rojo); color: var(--blanco); transform: scale(1.08);}
+.btn-primario:hover, .btn-primario:focus { background: var(--rojo); color: var(--blanco); transform: scale(1.08);}
 .btn-secundario { background: var(--rojo); color: var(--blanco);}
-.btn-secundario:hover { background: var(--dorado); color: var(--negro); transform: scale(1.08);}
+.btn-secundario:hover, .btn-secundario:focus { background: var(--dorado); color: var(--negro); transform: scale(1.08);}
 .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 2em 0 1em 0; background: var(--gris);}
 .hero-content { max-width: 600px; margin: auto; }
 .hero-content h1 { font-size: 2.2em; color: var(--dorado); margin: 0.2em 0 0.3em 0;}
@@ -53,10 +81,10 @@ nav {
 .testimonios footer { color: var(--dorado);}
 .testimonios-videos-galeria {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2em;
   margin: 2em auto 0 auto;
-  max-width: 1800px;
+  max-width: 900px;
   justify-items: center;
 }
 .testimonios-video {
@@ -87,6 +115,99 @@ nav {
   font-size: 1em;
 }
 
+.mosaico-galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2em;
+  max-width: 900px;
+  margin: 2em auto;
+}
+.mosaico-img-wrap {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px #0005;
+  transition: transform .2s;
+}
+.mosaico-img-wrap:hover {
+  transform: scale(1.04);
+  z-index: 2;
+}
+.mosaico-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+.mosaico-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #181818ee 70%, transparent);
+  color: var(--dorado);
+  font-weight: bold;
+  padding: 0.5em 0.8em;
+  font-size: 1em;
+  border-radius: 0 0 10px 10px;
+}
+
+.mosaico-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(24,24,24,0.95);
+  align-items: center;
+  justify-content: center;
+}
+.mosaico-modal.active { display: flex; }
+.mosaico-modal-content {
+  position: relative;
+  background: var(--gris);
+  border-radius: 18px;
+  max-width: 90vw;
+  max-height: 80vh;
+  box-shadow: 0 8px 32px #000c;
+  padding: 1em 1em 2em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mosaico-modal-img {
+  width: 90vw;
+  max-width: 650px;
+  max-height: 70vh;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px #000b;
+  object-fit: contain;
+}
+.mosaico-modal-caption {
+  margin-top: 1em;
+  color: var(--dorado);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+.mosaico-modal-close {
+  position: absolute; top: 0.6em; right: 1em;
+  background: var(--rojo);
+  color: var(--blanco);
+  border-radius: 30px;
+  font-size: 1.7em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--sombra-boton);
+  transition: background .2s;
+}
+.mosaico-modal-close:hover, .mosaico-modal-close:focus { background: var(--dorado); color: var(--negro); }
+
 .nosotros { display: flex; flex-wrap: wrap; gap: 2em; padding: 2em 0; max-width: 1200px; margin: auto;}
 .info-nosotros { flex: 2; min-width: 300px;}
 .historia-gimnasio { flex: 1; text-align: center;}
@@ -98,10 +219,10 @@ nav {
 .videos { background: var(--gris); padding: 2em 0;}
 .videos-galeria {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2em;
   margin: 2em auto 0 auto;
-  max-width: 1800px;
+  max-width: 900px;
   justify-items: center;
 }
 .video {
@@ -136,11 +257,11 @@ nav {
 .catalogo { padding: 2em 0; background: var(--negro);}
 .productos {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.2em;
   justify-items: center;
   margin: 2em auto 0 auto;
-  max-width: 1800px;
+  max-width: 900px;
 }
 .producto { background: var(--gris); border-radius: 10px; padding: 1em; width: 130px; text-align: center;}
 .producto img { max-width: 100%; border-radius: 6px;}
@@ -149,11 +270,11 @@ nav {
 .servicios-miembros { padding: 2em 0; background: var(--gris);}
 .servicios-lista {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.2em;
   justify-items: center;
   margin: 2em auto 0 auto;
-  max-width: 1800px;
+  max-width: 900px;
 }
 .servicio { background: var(--negro); border-radius: 10px; padding: 1em; width: 130px; text-align: center;}
 .servicio img { max-width: 80px; border-radius: 40px;}
@@ -168,10 +289,10 @@ nav {
 .logro img { max-width: 60px; border-radius: 30px;}
 .comunidad-videos-galeria {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2em;
   margin: 2em auto 0 auto;
-  max-width: 1800px;
+  max-width: 900px;
   justify-items: center;
 }
 .comunidad-video {
@@ -224,28 +345,25 @@ footer { background: var(--negro); color: var(--dorado); text-align: center; pad
 .redes a { color: var(--blanco); margin: 0 0.5em;}
 .aviso { color: var(--blanco); text-decoration: underline;}
 .botones-flotantes { position: fixed; bottom: 1em; right: 1em; display: flex; flex-direction: column; gap: 0.7em; z-index:999;}
-.botones-flotantes a { background: var(--dorado); color: var(--negro); padding: 0.8em 1em; border-radius: 25px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px #000a;}
+.botones-flotantes a { background: var(--dorado); color: var(--negro); padding: 0.8em 1em; border-radius: 25px; font-weight: bold; text-decoration: none; box-shadow: var(--sombra-boton);}
 .botones-flotantes a.whatsapp { background: #25d366; color: #fff;}
 .botones-flotantes a.telefono { background: var(--rojo); color: #fff;}
 .botones-flotantes a.email { background: var(--negro); color: var(--dorado);}
-@media (max-width: 1800px) {
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (max-width: 1100px) {
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista {
+@media (max-width: 900px) {
+  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista, .mosaico-galeria {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 96vw;
   }
 }
 @media (max-width: 700px) {
   .nosotros, .logros { flex-direction: column; align-items: center;}
   nav, .footer-content { flex-direction: column; gap: 0.5em;}
-  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista {
+  .videos-galeria, .testimonios-videos-galeria, .comunidad-videos-galeria, .productos, .servicios-lista, .mosaico-galeria {
     grid-template-columns: 1fr;
     gap: 1em;
+    max-width: 99vw;
   }
-  .video, .testimonios-video, .comunidad-video, .producto, .servicio {
+  .video, .testimonios-video, .comunidad-video, .producto, .servicio, .mosaico-img-wrap {
     max-width: 98vw;
   }
 }
