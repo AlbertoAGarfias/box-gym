@@ -55,6 +55,7 @@
         <p>“En 3NBOX encontré mucho más que un gimnasio, encontré una familia y aprendí a confiar en mí.”</p>
         <footer>—  Alberto. A.</footer>
       </blockquote>
+      <!-- Puedes agregar más testimonios aquí -->
     </div>
     <div class="testimonios-videos-galeria">
       <div class="testimonios-video">
@@ -84,30 +85,31 @@
     </div>
     <!-- Mosaico de imágenes Historias de Éxito -->
     <div class="mosaico-galeria" id="mosaico1">
-      <div class="mosaico-img-wrap" data-img="01.jpg" data-caption="Primer entrenamiento">
+      <div class="mosaico-img-wrap" data-img="historia1.jpg" data-caption="Primer entrenamiento">
         <img src="historia1.jpg" alt="Primer entrenamiento" class="mosaico-img">
         <span class="mosaico-caption">Primer entrenamiento</span>
       </div>
-      <div class="mosaico-img-wrap" data-img="02.jpg" data-caption="Victoria regional">
+      <div class="mosaico-img-wrap" data-img="historia2.jpg" data-caption="Victoria regional">
         <img src="historia2.jpg" alt="Victoria regional" class="mosaico-img">
         <span class="mosaico-caption">Victoria regional</span>
       </div>
-      <div class="mosaico-img-wrap" data-img="03.jpg" data-caption="Equipo 3NBOX">
+      <div class="mosaico-img-wrap" data-img="historia3.jpg" data-caption="Equipo 3NBOX">
         <img src="historia3.jpg" alt="Equipo 3NBOX" class="mosaico-img">
         <span class="mosaico-caption">Equipo 3NBOX</span>
       </div>
-      <div class="mosaico-img-wrap" data-img="04.jpg" data-caption="Campeón estatal">
+      <div class="mosaico-img-wrap" data-img="historia4.jpg" data-caption="Campeón estatal">
         <img src="historia4.jpg" alt="Campeón estatal" class="mosaico-img">
         <span class="mosaico-caption">Campeón estatal</span>
       </div>
-      <div class="mosaico-img-wrap" data-img="05.jpg" data-caption="Padres apoyando">
+      <div class="mosaico-img-wrap" data-img="historia5.jpg" data-caption="Padres apoyando">
         <img src="historia5.jpg" alt="Padres apoyando" class="mosaico-img">
         <span class="mosaico-caption">Padres apoyando</span>
       </div>
-      <div class="mosaico-img-wrap" data-img="06.jpg" data-caption="Celebración">
+      <div class="mosaico-img-wrap" data-img="historia6.jpg" data-caption="Celebración">
         <img src="historia6.jpg" alt="Celebración" class="mosaico-img">
         <span class="mosaico-caption">Celebración</span>
       </div>
+      <!-- Puedes agregar hasta 8 imágenes -->
     </div>
   </section>
 
@@ -173,27 +175,27 @@
     <!-- Mosaico de imágenes Peleas y Entrenamientos -->
     <div class="mosaico-galeria" id="mosaico2">
       <div class="mosaico-img-wrap" data-img="pelea1.jpg" data-caption="Pelea 1">
-        <img src="07.jpg" alt="Pelea 1" class="mosaico-img">
+        <img src="pelea1.jpg" alt="Pelea 1" class="mosaico-img">
         <span class="mosaico-caption">Pelea 1</span>
       </div>
       <div class="mosaico-img-wrap" data-img="pelea2.jpg" data-caption="Entrenamiento 2">
-        <img src="08.jpg" alt="Entrenamiento 2" class="mosaico-img">
+        <img src="pelea2.jpg" alt="Entrenamiento 2" class="mosaico-img">
         <span class="mosaico-caption">Entrenamiento 2</span>
       </div>
       <div class="mosaico-img-wrap" data-img="pelea3.jpg" data-caption="Celebración 3">
-        <img src="09.jpg" alt="Celebración 3" class="mosaico-img">
+        <img src="pelea3.jpg" alt="Celebración 3" class="mosaico-img">
         <span class="mosaico-caption">Celebración 3</span>
       </div>
       <div class="mosaico-img-wrap" data-img="pelea4.jpg" data-caption="Sparring">
-        <img src="10.jpg" alt="Sparring" class="mosaico-img">
+        <img src="pelea4.jpg" alt="Sparring" class="mosaico-img">
         <span class="mosaico-caption">Sparring</span>
       </div>
       <div class="mosaico-img-wrap" data-img="pelea5.jpg" data-caption="Equipo 3NBOX">
-        <img src="11.jpg" alt="Equipo 3NBOX" class="mosaico-img">
+        <img src="pelea5.jpg" alt="Equipo 3NBOX" class="mosaico-img">
         <span class="mosaico-caption">Equipo 3NBOX</span>
       </div>
       <div class="mosaico-img-wrap" data-img="pelea6.jpg" data-caption="Premiación">
-        <img src="12.jpg" alt="Premiación" class="mosaico-img">
+        <img src="pelea6.jpg" alt="Premiación" class="mosaico-img">
         <span class="mosaico-caption">Premiación</span>
       </div>
     </div>
@@ -400,6 +402,7 @@
       <p>El boxeo no solo mejora tu condición física, también fortalece tu disciplina mental y confianza...</p>
       <a href="#">Leer más</a>
     </article>
+    <!-- Más artículos -->
   </section>
 
   <!-- Contacto -->
@@ -462,52 +465,171 @@
     <a href="https://www.youtube.com/channel/UCgenerico" class="email" title="YouTube" target="_blank">YouTube</a>
   </div>
 
-  <!-- Modal para mosaico -->
-  <div class="mosaico-modal" id="mosaico-modal">
+  <!-- Modal para mosaico mejorado -->
+  <div class="mosaico-modal" id="mosaico-modal" tabindex="-1" aria-modal="true" role="dialog">
     <div class="mosaico-modal-content">
       <button class="mosaico-modal-close" id="mosaico-modal-close" aria-label="Cerrar">&times;</button>
-      <img src="" alt="" class="mosaico-modal-img" id="mosaico-modal-img">
+      <button class="mosaico-modal-prev" id="mosaico-modal-prev" aria-label="Anterior">&#8592;</button>
+      <div class="mosaico-modal-img-container" id="mosaico-modal-img-container">
+        <img src="" alt="" class="mosaico-modal-img" id="mosaico-modal-img">
+      </div>
+      <button class="mosaico-modal-next" id="mosaico-modal-next" aria-label="Siguiente">&#8594;</button>
       <div class="mosaico-modal-caption" id="mosaico-modal-caption"></div>
     </div>
   </div>
 
   <script>
-  // Modal para mosaico de imágenes
-  const modal = document.getElementById('mosaico-modal');
-  const modalImg = document.getElementById('mosaico-modal-img');
-  const modalCaption = document.getElementById('mosaico-modal-caption');
-  const modalClose = document.getElementById('mosaico-modal-close');
-  document.querySelectorAll('.mosaico-img-wrap').forEach(item => {
-    item.addEventListener('click', function() {
-      modalImg.src = this.dataset.img;
-      modalImg.alt = this.querySelector('.mosaico-img').alt;
-      modalCaption.textContent = this.dataset.caption || '';
+  // MODAL DE MOSAICO SUPER MEJORADO: navegación, zoom, swipe
+  (function(){
+    const mosaicos = document.querySelectorAll('.mosaico-galeria');
+    const modal = document.getElementById('mosaico-modal');
+    const modalImg = document.getElementById('mosaico-modal-img');
+    const modalImgContainer = document.getElementById('mosaico-modal-img-container');
+    const modalCaption = document.getElementById('mosaico-modal-caption');
+    const modalClose = document.getElementById('mosaico-modal-close');
+    const modalPrev = document.getElementById('mosaico-modal-prev');
+    const modalNext = document.getElementById('mosaico-modal-next');
+    let currentImages = [];
+    let currentIndex = 0;
+    let lastActiveBtn = null;
+    let scale = 1, originX = 0.5, originY = 0.5;
+
+    // Swipe variables
+    let touchStartX = 0, touchEndX = 0;
+
+    // Recopila imágenes de cualquier mosaico al que se haga clic
+    mosaicos.forEach(mosaico => {
+      const images = Array.from(mosaico.querySelectorAll('.mosaico-img-wrap'));
+      images.forEach((item, idx) => {
+        item.addEventListener('click', function(e){
+          e.stopPropagation();
+          currentImages = images;
+          currentIndex = idx;
+          lastActiveBtn = item;
+          openModal();
+        });
+      });
+    });
+
+    function openModal() {
+      showImage(currentIndex);
       modal.classList.add('active');
       document.body.style.overflow = "hidden";
-    });
-  });
-  modalClose.addEventListener('click', function() {
-    modal.classList.remove('active');
-    modalImg.src = "";
-    document.body.style.overflow = "";
-  });
-  modal.addEventListener('click', function(e) {
-    if(e.target === modal) {
+      modal.setAttribute('aria-hidden', 'false');
+      modal.focus();
+      resetZoom();
+    }
+
+    function closeModal() {
       modal.classList.remove('active');
       modalImg.src = "";
       document.body.style.overflow = "";
+      modal.setAttribute('aria-hidden', 'true');
+      resetZoom();
+      if(lastActiveBtn) lastActiveBtn.focus();
     }
-  });
-  // Botón activo en menú
+
+    function showImage(idx) {
+      const item = currentImages[idx];
+      if(!item) return;
+      modalImg.src = item.dataset.img;
+      modalImg.alt = item.querySelector('.mosaico-img').alt;
+      modalCaption.textContent = item.dataset.caption || '';
+      currentIndex = idx;
+      modalPrev.style.display = (idx > 0) ? 'block' : 'none';
+      modalNext.style.display = (idx < currentImages.length-1) ? 'block' : 'none';
+      resetZoom();
+    }
+
+    modalPrev.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(currentIndex > 0) showImage(currentIndex-1);
+    });
+    modalNext.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(currentIndex < currentImages.length-1) showImage(currentIndex+1);
+    });
+
+    modalClose.addEventListener('click', function(e){
+      closeModal();
+    });
+
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(!modal.classList.contains('active')) return;
+      if(e.key === 'Escape') closeModal();
+      if(e.key === 'ArrowLeft' && currentIndex > 0) showImage(currentIndex-1);
+      if(e.key === 'ArrowRight' && currentIndex < currentImages.length-1) showImage(currentIndex+1);
+    });
+
+    // Animación y foco accesible
+    modal.addEventListener('transitionend', function(){
+      if(modal.classList.contains('active')) modalClose.focus();
+    });
+
+    // ZOOM con doble clic y rueda del mouse
+    function resetZoom() {
+      scale = 1;
+      originX = 0.5;
+      originY = 0.5;
+      modalImg.style.transform = 'scale(1)';
+      modalImg.style.transformOrigin = '50% 50%';
+      modalImg.style.cursor = 'zoom-in';
+    }
+
+    modalImgContainer.addEventListener('dblclick', function(e){
+      if(scale === 1) {
+        scale = 2;
+        originX = e.offsetX / modalImg.width;
+        originY = e.offsetY / modalImg.height;
+        modalImg.style.transform = `scale(${scale})`;
+        modalImg.style.transformOrigin = `${originX*100}% ${originY*100}%`;
+        modalImg.style.cursor = 'zoom-out';
+      } else {
+        resetZoom();
+      }
+    });
+
+    modalImgContainer.addEventListener('wheel', function(e){
+      e.preventDefault();
+      let oldScale = scale;
+      if(e.deltaY < 0) scale = Math.min(scale+0.2, 3);
+      else scale = Math.max(scale-0.2, 1);
+      if(scale !== oldScale) {
+        originX = e.offsetX / modalImg.width;
+        originY = e.offsetY / modalImg.height;
+        modalImg.style.transform = `scale(${scale})`;
+        modalImg.style.transformOrigin = `${originX*100}% ${originY*100}%`;
+        modalImg.style.cursor = (scale > 1) ? 'zoom-out' : 'zoom-in';
+      }
+    });
+
+    // Swipe táctil móvil (cambia imagen)
+    modalImgContainer.addEventListener('touchstart', function(e){
+      if(e.touches.length === 1) touchStartX = e.touches[0].clientX;
+    }, {passive:true});
+    modalImgContainer.addEventListener('touchend', function(e){
+      if(e.changedTouches.length === 1) {
+        touchEndX = e.changedTouches[0].clientX;
+        let delta = touchEndX - touchStartX;
+        if(Math.abs(delta) > 50) {
+          if(delta > 0 && currentIndex > 0) showImage(currentIndex-1);
+          if(delta < 0 && currentIndex < currentImages.length-1) showImage(currentIndex+1);
+        }
+      }
+    }, {passive:true});
+
+  })();
+
+  // Botón activo en menú (igual que tu código)
   document.querySelectorAll('.menu li a').forEach(btn => {
     btn.addEventListener('click', function() {
       document.querySelectorAll('.menu li a').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
     });
-  });
-  </script>
-</body>
-</html>
   });
   </script>
 </body>
