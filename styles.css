@@ -163,8 +163,15 @@ nav {
   background: rgba(24,24,24,0.95);
   align-items: center;
   justify-content: center;
+  transition: opacity .25s;
+  opacity: 0;
+  pointer-events: none;
 }
-.mosaico-modal.active { display: flex; }
+.mosaico-modal.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
 .mosaico-modal-content {
   position: relative;
   background: var(--gris);
@@ -176,14 +183,54 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: modalFadeIn .2s;
+}
+@keyframes modalFadeIn {
+  from { transform: scale(.95) translateY(20px); opacity: 0;}
+  to   { transform: scale(1) translateY(0); opacity: 1;}
+}
+.mosaico-modal-prev, .mosaico-modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--dorado);
+  color: var(--negro);
+  border-radius: 50%;
+  border: none;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--sombra-boton);
+  transition: background .2s;
+  z-index: 10;
+}
+.mosaico-modal-prev:hover, .mosaico-modal-next:hover { background: var(--rojo); color: var(--blanco);}
+.mosaico-modal-prev { left: 0.3em;}
+.mosaico-modal-next { right: 0.3em;}
+.mosaico-modal-prev:disabled, .mosaico-modal-next:disabled { opacity: 0.4; pointer-events: none; }
+
+.mosaico-modal-img-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 650px;
+  max-height: 70vh;
+  overflow: hidden;
 }
 .mosaico-modal-img {
-  width: 90vw;
+  width: 100%;
   max-width: 650px;
   max-height: 70vh;
   border-radius: 12px;
   box-shadow: 0 6px 24px #000b;
   object-fit: contain;
+  transition: transform .25s cubic-bezier(.41,.7,.26,1.01);
+  cursor: zoom-in;
+  touch-action: none;
 }
 .mosaico-modal-caption {
   margin-top: 1em;
